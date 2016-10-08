@@ -1,7 +1,5 @@
 # README.md
 
-![travis-ci](https://travis-ci.org/mm0/ansible-role-directory.svg?branch=master)
-
 # Ansible Role: Directory v1.0
 
 An Ansible role that simply runs the file module to create a directory.
@@ -9,6 +7,8 @@ An Ansible role that simply runs the file module to create a directory.
 Occassionally, you will need to create a directory between role executions, there is no built-in way to do this, instead use this role in between.
 
 See Also: ansible-role-touch
+
+![travis-ci](https://travis-ci.org/mm0/ansible-role-directory.svg?branch=master)
 
 ## Requirements
 
