@@ -1,6 +1,8 @@
-# README.md
+Ansible Role: Directory v1.0
+===
 
-# Ansible Role: Directory v1.0
+[![Build Status](https://travis-ci.org/mm0/ansible-role-directory.svg?branch=master)](https://travis-ci.org/mm0/ansible-role-directory)
+
 
 An Ansible role that simply runs the file module to create a directory.
 
@@ -8,36 +10,48 @@ Occassionally, you will need to create a directory between role executions, ther
 
 See Also: ansible-role-touch
 
-![travis-ci](https://travis-ci.org/mm0/ansible-role-directory.svg?branch=master)
 
-## Requirements
+Requirements
+---
 
 None 
 
-## Role Variables
+Role Variables
+---
 
 Available variables are listed below, along with default values:
 
-    owner: ubuntu # owner of final directory uploaded remotely
-    group: ubuntu 
-    mode: 644 # mode for remote directory
-    directories: # a list of directories to create
-
-## Dependencies
+```yml
+owner: ubuntu # owner of final directory uploaded remotely
+group: ubuntu 
+mode: 644 # mode for remote directory
+directories: # a list of directories to create
+```
+Dependencies
 
 None 
 
-## Example Playbook
+Example Playbook
+---
+```yml
+- hosts: webservers
+  roles:
+  - { role: ansible-role-directory,
+      directories: ["/var/log/mylog","/var/log/mylog.2""],
+      owner: ubuntu,
+      group: ubuntu,
+      mode: "0755"
+    }
+```
 
-    - hosts: webservers
-      roles:
-      - { role: ansible-role-directory,
-          directories: ["/var/log/mylog","/var/log/mylog.2""],
-          owner: ubuntu,
-          group: ubuntu,
-          mode: "0755"
-        }
+License
+---------------
 
-## License
+BSD-2
 
-MIT
+Author Information
+------------------
+
+[Matt Margolin](mailto:matt.margolin@gmail.com)
+
+[mm0](https://github.com/mm0) on github
